@@ -3,7 +3,7 @@ public class Entry
     // get random prompt
     PromptGenerator promptGenerator = new PromptGenerator();
     // create variables
-    public DateTime _date;
+    public string _date;
     public string _entry;
     public string _prompt;
 
@@ -22,7 +22,7 @@ public class Entry
     // void print method
     public void DisplayEntry()
     {
-        _date = DateTime.Now;
+        _date = DateTime.Now.ToString("MM/dd/yyyy");
         Console.WriteLine($"{_date} -- {_prompt}\n{_entry}\n");
     }
 }

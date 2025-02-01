@@ -24,25 +24,25 @@ class Program
                 // display entries
                 entry.DisplayEntry();
             }
-            // else if (choice == 3)
-            // {
-            //     // load entries from a file
-            //     journal.Load(); // load the entry
-            // }
-            // else if (choice == 4)
-            // {
-            //     // save entries to a file
-            //     journal.Save(); // save the entry
-            // }
-            // else if (choice == 5)
-            // {
-            //     // quit the program
-            //     Console.WriteLine("Goodbye!");
-            // }
-            // else
-            // {
-            //     Console.WriteLine("Invalid choice. Please select a number between 1 and 5.");
-            // }
+            else if (choice == 3)
+            {
+                // load entries from a file
+                journal.LoadJournalFile();
+            }
+            else if (choice == 4)
+            {
+                // save entries to a file
+                journal.CreateJournalFile();
+            }
+            else if (choice == 5)
+            {
+                // quit the program
+                Console.WriteLine("Goodbye!");
+            }
+            else
+            {
+                Console.WriteLine("Invalid choice. Please select a number between 1 and 5.");
+            }
         } while (choice != 5);
     }
 }
