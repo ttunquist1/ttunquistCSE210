@@ -44,11 +44,11 @@ public class Journal
     public void SaveJournalFile(string _userFileName)
     // Method to save journal to txt file 
     {
-        using (StreamWriter outputFile = new StreamWriter(_userFileName))
+        using (StreamWriter _outputFile = new StreamWriter(_userFileName))
         {
             foreach (Entry Entry in _entries)
             {
-                outputFile.WriteLine($"{Entry._date}; {Entry._prompt}; {Entry._entry}");
+                _outputFile.WriteLine($"{Entry._date}; {Entry._prompt}; {Entry._entry}");
             }
         }
     }
@@ -56,11 +56,11 @@ public class Journal
     public void AppendJournalFile(string _userFileName)
     // Method to save a new entry to journal txt file 
     {
-        using (StreamWriter outputFile = new StreamWriter(_userFileName, append: true))
+        using (StreamWriter _outputFile = new StreamWriter(_userFileName, append: true))
         {
             foreach (Entry Entry in _entries)
             {
-                outputFile.WriteLine($"{Entry._date}; {Entry._prompt}; {Entry._entry}");
+                _outputFile.WriteLine($"{Entry._date}; {Entry._prompt}; {Entry._entry}");
             }
         }
     }
@@ -70,8 +70,8 @@ public class Journal
     // This should replace any current info in the list
     {
         Console.Write("What your file name? ");
-        string userInput = Console.ReadLine();
-        _userFileName = userInput + ".txt";
+        string _userInput = Console.ReadLine();
+        _userFileName = _userInput + ".txt";
 
         if (File.Exists(_userFileName))
         {
@@ -88,6 +88,10 @@ public class Journal
 
                 _entries.Add(entry);
             }
+        }
+        else
+        {
+            Console.WriteLine($"\n*** {_userFileName} does not exist. ***\n");
         }
     }
 
