@@ -20,17 +20,17 @@ class Timer
 
     public static void PauseWithAnimation(int seconds)
     {
-        for (int i = 0; i < seconds / 2; i++)
+        // simulate a pause with animation
+        for (int i = 0; i < seconds; i++)
         {
-            Console.Write("\rLoading");
-            Thread.Sleep(500);
-            Console.Write("\rLoading.");
-            Thread.Sleep(500);
-            Console.Write("\rLoading. .");
-            Thread.Sleep(500);
-            Console.Write("\rLoading. . .");
-            Thread.Sleep(500);
-            Console.Write("\r\b            \b");
+            Console.Write("\r|");
+            Thread.Sleep(250);
+            Console.Write("\r/");
+            Thread.Sleep(250);
+            Console.Write("\r-");
+            Thread.Sleep(250);
+            Console.Write("\r\\");
+            Thread.Sleep(250);
         }
     }
 }

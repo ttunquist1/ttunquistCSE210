@@ -21,7 +21,7 @@ class Activity
         Console.WriteLine("Description: " + _description);
         Console.WriteLine("The activity will take " + _duration + " seconds.");
         Console.WriteLine("Press any key to start the activity.");
-        Console.ReadKey();
+        Console.ReadLine();
     }
 
     public void InteractEpilogue(){
